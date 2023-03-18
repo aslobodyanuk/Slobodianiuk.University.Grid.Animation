@@ -21,7 +21,7 @@ export class VitaliiSynytskyiConfigLoaderService implements IConfigLoaderService
             surname: 'Synytskyi',
             email: this.getStudentEmail(),
             projectName: 'Circle',
-            personalProjectLink: 'https://lab2-animation.azurewebsites.net',
+            personalProjectLink: 'https://witty-plant-0f1aca810.2.azurestaticapps.net',
             header: getDefaultCircleFrame(0),
             frames: frames()
         }
