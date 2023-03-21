@@ -1,42 +1,44 @@
 import IAnimationConfig from "../models/animation-config";
 import { IConfigLoaderService } from "./config-loader-interface";
 import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodianiuk";
+import { OlehMuzychukConfigLoaderService } from "./students/oleh-muzychuk";
 
 export class MainConfigLoaderService {
 
-    private services: IConfigLoaderService[];
+	private services: IConfigLoaderService[];
 
-    constructor() {
-        this.services = [
-            new AndriiSlobodianiukConfigLoaderService()
-        ];
-    }
+	constructor() {
+		this.services = [
+			new AndriiSlobodianiukConfigLoaderService(),
+			new OlehMuzychukConfigLoaderService()
+		];
+	}
 
-    public loadAllConfigs(): IAnimationConfig[] {
+	public loadAllConfigs(): IAnimationConfig[] {
 
-        const results = [];
-        let counter = 0;
+		const results = [];
+		let counter = 0;
 
-        for (const service of this.services) {
+		for (const service of this.services) {
 
-            let name = '';
-            let email = '';
+			let name = '';
+			let email = '';
 
-            try {
+			try {
 
-                name = service.getStudentName();
-                email = service.getStudentEmail();
-                const config = service.loadConfig();
-                config.id = counter.toString();
+				name = service.getStudentName();
+				email = service.getStudentEmail();
+				const config = service.loadConfig();
+				config.id = counter.toString();
 
-                results.push(config);
-                counter++;
+				results.push(config);
+				counter++;
 
-            } catch (exc) {
-                console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
-            }
-        }
+			} catch (exc) {
+				console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
+			}
+		}
 
-        return results;
-    }
+		return results;
+	}
 }
