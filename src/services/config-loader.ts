@@ -1,26 +1,27 @@
-import IAnimationConfig from "../models/animation-config";
-import { IConfigLoaderService } from "./config-loader-interface";
-import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodianiuk";
-import { VitaliiSynytskyiConfigLoaderService } from "./students/vitalii-synytskyi";
-import { OleksandrZhukConfigLoaderService } from "./students/oleksandr-zhuk";
-import { YaroslavPasichnykConfigLoaderService } from "./students/yaroslav-pasichnyk";
-import { YaroslavTsvykConfigLoaderService } from "./students/yaroslav-tsvyk";
-import { OstapBlystsivConfigLoaderService } from "./students/ostap-blystsiv";
-import { DenysZarubaConfigLoaderService } from "./students/denys-zaruba";
-import { VoievodaVladislavConfigLoaderService } from "./students/vlad-voievoda";
-import { IlliaChumakConfigLoaderService } from "./students/illia-chumak";
-import { NazarPohonchukConfigLoaderService } from "./students/nazar-pohonchuk";
-import { MalishVitaliyConfigLoaderService } from "./students/vitalii.malysh";
-import { ArsenShvediukConfigLoaderService } from "./students/arsen-shvediuk";
-import { DaniilHulchenkoLoaderService } from "./students/daniil-hulchenko";
-import { VitaliyHavronaConfigLoaderService } from "./students/vitaliy-havrona";
-import { RuslanHavrilyakConfigLoaderService } from "./students/ruslan-havrilyak";
-import { MyronVikaConfigLoaderService } from "./students/vika-myron";
-import { TarasRohulyaConfigLoaderService } from "./students/taras-rohulya";
-import { OleksandrZhovanukConfigLoaderService } from "./students/oleksandr-zhovanuk";
-import { BohdanDzirbaConfigLoaderService } from "./students/bohdan-dzirba";
-import { YaroslavHolovkoConfigLoaderService } from "./students/yaroslav-holovko";
-import { BardakovConfigLoaderService } from "./students/bardakov";
+import IAnimationConfig from '../models/animation-config';
+import { IConfigLoaderService } from './config-loader-interface';
+import { AndriiSlobodianiukConfigLoaderService } from './students/andrii-slobodianiuk';
+import { VitaliiSynytskyiConfigLoaderService } from './students/vitalii-synytskyi';
+import { OleksandrZhukConfigLoaderService } from './students/oleksandr-zhuk';
+import { YaroslavPasichnykConfigLoaderService } from './students/yaroslav-pasichnyk';
+import { YaroslavTsvykConfigLoaderService } from './students/yaroslav-tsvyk';
+import { OstapBlystsivConfigLoaderService } from './students/ostap-blystsiv';
+import { DenysZarubaConfigLoaderService } from './students/denys-zaruba';
+import { VoievodaVladislavConfigLoaderService } from './students/vlad-voievoda';
+import { IlliaChumakConfigLoaderService } from './students/illia-chumak';
+import { NazarPohonchukConfigLoaderService } from './students/nazar-pohonchuk';
+import { MalishVitaliyConfigLoaderService } from './students/vitalii.malysh';
+import { ArsenShvediukConfigLoaderService } from './students/arsen-shvediuk';
+import { DaniilHulchenkoLoaderService } from './students/daniil-hulchenko';
+import { VitaliyHavronaConfigLoaderService } from './students/vitaliy-havrona';
+import { RuslanHavrilyakConfigLoaderService } from './students/ruslan-havrilyak';
+import { MyronVikaConfigLoaderService } from './students/vika-myron';
+import { TarasRohulyaConfigLoaderService } from './students/taras-rohulya';
+import { OleksandrZhovanukConfigLoaderService } from './students/oleksandr-zhovanuk';
+import { BohdanDzirbaConfigLoaderService } from './students/bohdan-dzirba';
+import { YaroslavHolovkoConfigLoaderService } from './students/yaroslav-holovko';
+import { BardakovConfigLoaderService } from './students/bardakov';
+import { OleksiiPylypenkoConfigLoaderService } from './students/oleksii-pylypenko';
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -47,7 +48,8 @@ export class MainConfigLoaderService {
       new BohdanDzirbaConfigLoaderService(),
       new MalishVitaliyConfigLoaderService(),
       new YaroslavHolovkoConfigLoaderService(),
-      new BardakovConfigLoaderService()
+      new BardakovConfigLoaderService(),
+      new OleksiiPylypenkoConfigLoaderService(),
     ];
   }
 
@@ -56,8 +58,8 @@ export class MainConfigLoaderService {
     let counter = 0;
 
     for (const service of this.services) {
-      let name = "";
-      let email = "";
+      let name = '';
+      let email = '';
 
       try {
         name = service.getStudentName();
