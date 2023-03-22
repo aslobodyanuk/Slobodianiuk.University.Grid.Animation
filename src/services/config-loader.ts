@@ -4,41 +4,36 @@ import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodi
 import { OlehMuzychukConfigLoaderService } from "./students/oleh-muzychuk";
 
 export class MainConfigLoaderService {
+  private services: IConfigLoaderService[];
 
-	private services: IConfigLoaderService[];
+  constructor() {
+    this.services = [
+      new AndriiSlobodianiukConfigLoaderService(),
+      new OlehMuzychukConfigLoaderService()
+    ];
+  }
 
-	constructor() {
-		this.services = [
-			new AndriiSlobodianiukConfigLoaderService(),
-			new OlehMuzychukConfigLoaderService()
-		];
-	}
+  public loadAllConfigs(): IAnimationConfig[] {
+    const results = [];
+    let counter = 0;
 
-	public loadAllConfigs(): IAnimationConfig[] {
+    for (const service of this.services) {
+      let name = "";
+      let email = "";
 
-		const results = [];
-		let counter = 0;
+      try {
+        name = service.getStudentName();
+        email = service.getStudentEmail();
+        const config = service.loadConfig();
+        config.id = counter.toString();
 
-		for (const service of this.services) {
+        results.push(config);
+        counter++;
+      } catch (exc) {
+        console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
+      }
+    }
 
-			let name = '';
-			let email = '';
-
-			try {
-
-				name = service.getStudentName();
-				email = service.getStudentEmail();
-				const config = service.loadConfig();
-				config.id = counter.toString();
-
-				results.push(config);
-				counter++;
-
-			} catch (exc) {
-				console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
-			}
-		}
-
-		return results;
-	}
+    return results;
+  }
 }
