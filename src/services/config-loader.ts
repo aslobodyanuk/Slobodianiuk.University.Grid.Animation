@@ -84,8 +84,8 @@ export class MainConfigLoaderService {
     let counter = 0;
 
     for (const service of this.services) {
-      let name = '';
-      let email = '';
+      let name = "";
+      let email = "";
 
       try {
         name = service.getStudentName();
