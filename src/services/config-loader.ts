@@ -37,73 +37,75 @@ import { OlehMuzychukConfigLoaderService } from "./students/oleh-muzychuk";
 import { OleksiiPylypenkoConfigLoaderService } from "./students/oleksii-pylypenko";
 import { MykhailoHorpyniukConfigLoaderService } from "./students/mykhailo-horpyniuk";
 import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
+import { IltoRomanConfigLoaderService } from "./students/roman-ilto";
 
 export class MainConfigLoaderService {
-  private services: IConfigLoaderService[];
+	private services: IConfigLoaderService[];
 
-  constructor() {
-    this.services = [
-      new AndriiSlobodianiukConfigLoaderService(),
-      new OleksandrZhukConfigLoaderService(),
-      new YaroslavPasichnykConfigLoaderService(),
-      new YaroslavTsvykConfigLoaderService(),
-      new OstapBlystsivConfigLoaderService(),
-      new DenysZarubaConfigLoaderService(),
-      new VitaliiSynytskyiConfigLoaderService(),
-      new VoievodaVladislavConfigLoaderService(),
-      new IlliaChumakConfigLoaderService(),
-      new NazarPohonchukConfigLoaderService(),
-      new DaniilHulchenkoLoaderService(),
-      new ArsenShvediukConfigLoaderService(),
-      new VitaliyHavronaConfigLoaderService(),
-      new RuslanHavrilyakConfigLoaderService(),
-      new MyronVikaConfigLoaderService(),
-      new TarasRohulyaConfigLoaderService(),
-      new OleksandrZhovanukConfigLoaderService(),
-      new BohdanDzirbaConfigLoaderService(),
-      new MalishVitaliyConfigLoaderService(),
-      new YaroslavHolovkoConfigLoaderService(),
-      new BardakovConfigLoaderService(),
-      new ZakalaOleksandrConfigLoaderService(),
-      new ValeriymanuilykConfigLoaderService(),
-      new LozoviiTarasConfigLoaderService(),
-      new NazarYarishConfigLoaderService(),
-      new StepTkachivskyiConfigLoaderService(),
-      new VitaliLyloConfigLoaderService(),
-      new OlehGeriiConfigLoaderService(),
-      new DenysVelychkoConfigLoaderService(),
-      new YuriiRobakConfigLoaderService(),
-      new OlesandrBiletskyiConfigLoaderService(),
-      new OlehSuvorovConfigLoaderService(),
-      new KoarizVolodymyrConfigLoaderService(),
-      new OlehMuzychukConfigLoaderService(),
-      new OleksiiPylypenkoConfigLoaderService(),
-      new MykhailoHorpyniukConfigLoaderService(),
-      new DmytroSerafymConfigLoaderService(),
-    ];
-  }
+	constructor() {
+		this.services = [
+			new IltoRomanConfigLoaderService(),
+			new AndriiSlobodianiukConfigLoaderService(),
+			new OleksandrZhukConfigLoaderService(),
+			new YaroslavPasichnykConfigLoaderService(),
+			new YaroslavTsvykConfigLoaderService(),
+			new OstapBlystsivConfigLoaderService(),
+			new DenysZarubaConfigLoaderService(),
+			new VitaliiSynytskyiConfigLoaderService(),
+			new VoievodaVladislavConfigLoaderService(),
+			new IlliaChumakConfigLoaderService(),
+			new NazarPohonchukConfigLoaderService(),
+			new DaniilHulchenkoLoaderService(),
+			new ArsenShvediukConfigLoaderService(),
+			new VitaliyHavronaConfigLoaderService(),
+			new RuslanHavrilyakConfigLoaderService(),
+			new MyronVikaConfigLoaderService(),
+			new TarasRohulyaConfigLoaderService(),
+			new OleksandrZhovanukConfigLoaderService(),
+			new BohdanDzirbaConfigLoaderService(),
+			new MalishVitaliyConfigLoaderService(),
+			new YaroslavHolovkoConfigLoaderService(),
+			new BardakovConfigLoaderService(),
+			new ZakalaOleksandrConfigLoaderService(),
+			new ValeriymanuilykConfigLoaderService(),
+			new LozoviiTarasConfigLoaderService(),
+			new NazarYarishConfigLoaderService(),
+			new StepTkachivskyiConfigLoaderService(),
+			new VitaliLyloConfigLoaderService(),
+			new OlehGeriiConfigLoaderService(),
+			new DenysVelychkoConfigLoaderService(),
+			new YuriiRobakConfigLoaderService(),
+			new OlesandrBiletskyiConfigLoaderService(),
+			new OlehSuvorovConfigLoaderService(),
+			new KoarizVolodymyrConfigLoaderService(),
+			new OlehMuzychukConfigLoaderService(),
+			new OleksiiPylypenkoConfigLoaderService(),
+			new MykhailoHorpyniukConfigLoaderService(),
+			new DmytroSerafymConfigLoaderService()
+		];
+	}
 
-  public loadAllConfigs(): IAnimationConfig[] {
-    const results = [];
-    let counter = 0;
+	public loadAllConfigs(): IAnimationConfig[] {
+		const results = [];
+		let counter = 0;
 
-    for (const service of this.services) {
-      let name = "";
-      let email = "";
+		for (const service of this.services) {
+			let name = "";
+			let email = "";
 
-      try {
-        name = service.getStudentName();
-        email = service.getStudentEmail();
-        const config = service.loadConfig();
-        config.id = counter.toString();
+			try {
+				name = service.getStudentName();
+				email = service.getStudentEmail();
+				const config = service.loadConfig();
+				config.id = counter.toString();
 
-        results.push(config);
-        counter++;
-      } catch (exc) {
-        console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
-      }
-    }
+				results.push(config);
+				counter++;
+			} catch (exc) {
+				console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
+			}
+		}
 
-    return results;
-  }
+		return results;
+	}
 }
