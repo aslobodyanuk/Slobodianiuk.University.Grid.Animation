@@ -20,7 +20,7 @@ export class AndriiKozynyiConfigLoaderService implements IConfigLoaderService {
             surname: 'Kozynyi',
             email: this.getStudentEmail(),
             projectName: 'PixelClockAnimation',
-            personalProjectLink: 'https://example.com',
+            personalProjectLink: 'https://markus-it.azurewebsites.net',
             header: GetHeader(),
             frames: GenerateFrames(),
         };
@@ -30,7 +30,7 @@ export class AndriiKozynyiConfigLoaderService implements IConfigLoaderService {
 function GenerateClockFrame(frameNumber: number): IFrame {
     const pixels: IPixelState[] = [];
 
-    // Створення контуру годинника
+    
     for (let x = 0; x < 16; x++) {
         for (let y = 0; y < 16; y++) {
             if ((x === 0 || x === 15 || y === 0 || y === 15) && !(x === 0 && y === 0) && !(x === 0 && y === 15) && !(x === 15 && y === 0) && !(x === 15 && y === 15)) {
@@ -39,26 +39,26 @@ function GenerateClockFrame(frameNumber: number): IFrame {
         }
     }
 
-    // Обличчя годинника
+    
     pixels.push({ x: 7, y: 7, color: Colour.White });
 
-    // Розміщення стрілок годинника залежно від часу
-    const hours = frameNumber % 12; // Припустимо, що ми маємо тільки 12 годин
-    const minutes = frameNumber % 60; // Припустимо, що ми маємо тільки 60 хвилин
+    
+    const hours = frameNumber % 12; 
+    const minutes = frameNumber % 60;
 
-    // Стрілка годин
-    const hourAngle = (hours * 30 + minutes / 2) * (Math.PI / 180);
-    const hourLength = 3; // Довжина стрілки годин
+
+    const hourAngle = (360 - ((hours * 30) + (minutes / 2))) * (Math.PI / 180);
+    const hourLength = 5;
     const hourX = Math.round(7 + hourLength * Math.sin(hourAngle));
     const hourY = Math.round(7 - hourLength * Math.cos(hourAngle));
-    drawLine(7, 7, hourX, hourY, pixels); // Малюємо стрілку годин
+    drawLine(7, 7, hourX, hourY, pixels); 
 
-    // Стрілка хвилин
-    const minuteAngle = minutes * 6 * (Math.PI / 180);
-    const minuteLength = 5; // Довжина стрілки хвилин
+
+    const minuteAngle = (360 - (minutes * 6)) * (Math.PI / 180);
+    const minuteLength = 3;
     const minuteX = Math.round(7 + minuteLength * Math.sin(minuteAngle));
     const minuteY = Math.round(7 - minuteLength * Math.cos(minuteAngle));
-    drawLine(7, 7, minuteX, minuteY, pixels); // Малюємо стрілку хвилин
+    drawLine(7, 7, minuteX, minuteY, pixels); 
 
     const frame: IFrame = {
         frameNumber,
@@ -68,7 +68,7 @@ function GenerateClockFrame(frameNumber: number): IFrame {
     return frame;
 }
 
-// Функція для малювання лінії на годиннику (стрілки)
+
 function drawLine(x1: number, y1: number, x2: number, y2: number, pixels: IPixelState[]): void {
     const dx = Math.abs(x2 - x1);
     const dy = Math.abs(y2 - y1);
@@ -89,7 +89,7 @@ function drawLine(x1: number, y1: number, x2: number, y2: number, pixels: IPixel
 function GenerateFrames(): IFrame[] {
     const frames: IFrame[] = [];
 
-    for (let frameNumber = 0; frameNumber < 120; frameNumber++) { // Змінив кількість кадрів на 120
+    for (let frameNumber = 0; frameNumber < 120; frameNumber++) { 
         frames.push(GenerateClockFrame(frameNumber));
     }
 
