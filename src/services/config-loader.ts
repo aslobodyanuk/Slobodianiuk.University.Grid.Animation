@@ -40,6 +40,7 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
+import { OlehTysovskyiConfigLoaderService } from "./students/oleh-tysovskyi";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -86,6 +87,7 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
+      new OlehTysovskyiConfigLoaderService(),
     ];
   }
 
@@ -106,7 +108,10 @@ export class MainConfigLoaderService {
         results.push(config);
         counter++;
       } catch (exc) {
-        console.error(`Error occured while processing student '${name}' - ${email}.`, exc);
+        console.error(
+          `Error occured while processing student '${name}' - ${email}.`,
+          exc
+        );
       }
     }
 
