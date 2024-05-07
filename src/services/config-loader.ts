@@ -1,6 +1,7 @@
 import IAnimationConfig from "../models/animation-config";
 import { IConfigLoaderService } from "./config-loader-interface";
 import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodianiuk";
+import { MariiaBodnarConfigLoaderService } from "./students/mariia-bodnar";
 import { VitaliiSynytskyiConfigLoaderService } from "./students/vitalii-synytskyi";
 import { OleksandrZhukConfigLoaderService } from "./students/oleksandr-zhuk";
 import { YaroslavPasichnykConfigLoaderService } from "./students/yaroslav-pasichnyk";
@@ -40,7 +41,6 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
-import { RostykDurjaginConfigLoaderService } from "./students/rostyk-durjagin";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -48,6 +48,7 @@ export class MainConfigLoaderService {
   constructor() {
     this.services = [
       new AndriiSlobodianiukConfigLoaderService(),
+      new MariiaBodnarConfigLoaderService(),
       new OleksandrZhukConfigLoaderService(),
       new YaroslavPasichnykConfigLoaderService(),
       new YaroslavTsvykConfigLoaderService(),
@@ -87,7 +88,6 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
-      new RostykDurjaginConfigLoaderService
     ];
   }
 
