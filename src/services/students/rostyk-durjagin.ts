@@ -54,7 +54,7 @@ const Avatar = (frameNumber: number): IFrame => {
         { x: 1, y: 7, color: Colour.White },
         { x: 1, y: 8, color: Colour.White },
         { x: 1, y: 9, color: Colour.White },
-        { x: 5, y: 10, color: Colour.White },
+        { x: 1, y: 10, color: Colour.White },
     ];
 
     result.pixels.push(...F_pixels);
