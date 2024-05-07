@@ -34,7 +34,6 @@ const Avatar = (frameNumber: number): IFrame => {
     };
 
     const F_pixels: IPixelState[] = [
-        // F
         { x: 1, y: 6, color: Colour.White },
         { x: 2, y: 6, color: Colour.White },
         { x: 3, y: 6, color: Colour.White },
