@@ -48,6 +48,7 @@ import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-c
 import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
 import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
 import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
+import { OlehFiniakConfigLoaderService } from "./students/oleh-finiak";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -102,6 +103,7 @@ export class MainConfigLoaderService {
       new AnastasiaDmytryshynConfigLoaderService(),
       new VolodymyrDemchyshynConfigLoaderService(),
       new MariiaKatsubaConfigLoaderService(),
+      new OlehFiniakConfigLoaderService(),
     ];
   }
 
