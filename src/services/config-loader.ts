@@ -1,6 +1,7 @@
 import IAnimationConfig from "../models/animation-config";
 import { IConfigLoaderService } from "./config-loader-interface";
 import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodianiuk";
+import { MariiaBodnarConfigLoaderService } from "./students/mariia-bodnar";
 import { VitaliiSynytskyiConfigLoaderService } from "./students/vitalii-synytskyi";
 import { OleksandrZhukConfigLoaderService } from "./students/oleksandr-zhuk";
 import { YaroslavPasichnykConfigLoaderService } from "./students/yaroslav-pasichnyk";
@@ -40,6 +41,15 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
+import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
+import { DariiaHrychynaConfigLoaderService } from "./students/dariia.hrychyna";
+import {DmytroBilykConfigLoaderService} from "./students/dmytro-bilyk";
+import { NikitaPashchukConfigLoaderService } from "./students/nikita-pashchuk";
+import { KaterynaBaryliukConfigLoaderService } from "./students/kateryna-baryliuk";
+import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-chervynska";
+import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
+import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
+import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
 import { VitaliyZhuravskyiConfigLoaderService } from "./students/vitaliy-zhuravskyi";
 
 export class MainConfigLoaderService {
@@ -48,6 +58,7 @@ export class MainConfigLoaderService {
   constructor() {
     this.services = [
       new AndriiSlobodianiukConfigLoaderService(),
+      new MariiaBodnarConfigLoaderService(),
       new OleksandrZhukConfigLoaderService(),
       new YaroslavPasichnykConfigLoaderService(),
       new YaroslavTsvykConfigLoaderService(),
@@ -87,6 +98,15 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
+      new MykytaSirykConfigLoaderService(),
+      new DariiaHrychynaConfigLoaderService(),
+      new DmytroBilykConfigLoaderService(),
+      new NikitaPashchukConfigLoaderService(),
+      new KaterynaBaryliukConfigLoaderService(),
+      new YelyzavetaChervynskaConfigLoaderService(),
+      new AnastasiaDmytryshynConfigLoaderService(),
+      new VolodymyrDemchyshynConfigLoaderService(),
+      new MariiaKatsubaConfigLoaderService(),
       new VitaliyZhuravskyiConfigLoaderService(),
     ];
   }
