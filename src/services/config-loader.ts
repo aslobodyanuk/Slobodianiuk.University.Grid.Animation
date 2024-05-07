@@ -43,13 +43,14 @@ import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
 import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
 import { DariiaHrychynaConfigLoaderService } from "./students/dariia.hrychyna";
-import {DmytroBilykConfigLoaderService} from "./students/dmytro-bilyk";
+import { DmytroBilykConfigLoaderService } from "./students/dmytro-bilyk";
 import { NikitaPashchukConfigLoaderService } from "./students/nikita-pashchuk";
 import { KaterynaBaryliukConfigLoaderService } from "./students/kateryna-baryliuk";
 import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-chervynska";
 import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
 import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
 import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
+import { YuriiBroslavskyiConfigLoaderService } from "./students/yurii-broslavskyi";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -106,6 +107,7 @@ export class MainConfigLoaderService {
       new AnastasiaDmytryshynConfigLoaderService(),
       new VolodymyrDemchyshynConfigLoaderService(),
       new MariiaKatsubaConfigLoaderService(),
+      new YuriiBroslavskyiConfigLoaderService(),
     ];
   }
 
