@@ -41,6 +41,15 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
+import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
+import { DariiaHrychynaConfigLoaderService } from "./students/dariia.hrychyna";
+import {DmytroBilykConfigLoaderService} from "./students/dmytro-bilyk";
+import { NikitaPashchukConfigLoaderService } from "./students/nikita-pashchuk";
+import { KaterynaBaryliukConfigLoaderService } from "./students/kateryna-baryliuk";
+import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-chervynska";
+import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
+import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
+import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
 import { RostykDurjaginConfigLoaderService } from "./students/rostyk-durjagin";
 
 export class MainConfigLoaderService {
@@ -89,6 +98,15 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
+      new MykytaSirykConfigLoaderService(),
+      new DariiaHrychynaConfigLoaderService(),
+      new DmytroBilykConfigLoaderService(),
+      new NikitaPashchukConfigLoaderService(),
+      new KaterynaBaryliukConfigLoaderService(),
+      new YelyzavetaChervynskaConfigLoaderService(),
+      new AnastasiaDmytryshynConfigLoaderService(),
+      new VolodymyrDemchyshynConfigLoaderService(),
+      new MariiaKatsubaConfigLoaderService(),
       new RostykDurjaginConfigLoaderService(),
     ];
   }
