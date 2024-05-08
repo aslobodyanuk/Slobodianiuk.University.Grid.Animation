@@ -4,7 +4,6 @@ import IFrame from '../../models/frame';
 import IPixelState from '../../models/pixel-state';
 import { IConfigLoaderService } from "../config-loader-interface";
 
-
 export class OlehBezrodnyiConfigLoaderService implements IConfigLoaderService {
 
     public getStudentName(): string {
@@ -24,57 +23,41 @@ export class OlehBezrodnyiConfigLoaderService implements IConfigLoaderService {
             personalProjectLink: 'https://github.com/Oollll/Bezrodnyi.Unyversity.Eco-Friendly_Lifestyle_Tracker',
             header: {
                 frameNumber: 0,
-                pixels: this.generateCatFrame(21).pixels,
+                pixels: this.generateObjectFrame(0, 80), // Передача ширини екрану (наприклад, 80) в якості параметра
             },
-            frames: this.generateAnimationFrames()
-        }
+            frames: this.generateObjectAnimationFrames(),
+        };
     }
-
-    private generateCatFrame(frameNumber: number): IFrame {
+        
+    private generateObjectFrame(frameNumber: number, screenWidth: number): IPixelState[] {
         const pixels: IPixelState[] = [];
-
-        switch (frameNumber % 4) {
-            case 0:
-                // Frame 0: Cat face
-                pixels.push({ x: 10, y: 5, color: Colour.Black }); // Left eye
-                pixels.push({ x: 12, y: 5, color: Colour.Black }); // Right eye
-                pixels.push({ x: 11, y: 7, color: Colour.Black }); // Nose
-                pixels.push({ x: 10, y: 8, color: Colour.Black }); // Mouth
-                break;
-            case 1:
-                // Frame 1: Wink
-                pixels.push({ x: 10, y: 5, color: Colour.Black }); // Left eye (open)
-                pixels.push({ x: 12, y: 5, color: Colour.White }); // Right eye (wink)
-                pixels.push({ x: 11, y: 7, color: Colour.Black }); // Nose
-                pixels.push({ x: 10, y: 8, color: Colour.Black }); // Mouth
-                break;
-            case 2:
-                // Frame 2: Surprise
-                pixels.push({ x: 10, y: 5, color: Colour.Black }); // Left eye (big)
-                pixels.push({ x: 12, y: 5, color: Colour.Black }); // Right eye (big)
-                pixels.push({ x: 11, y: 7, color: Colour.Black }); // Nose (wide)
-                pixels.push({ x: 10, y: 8, color: Colour.Black }); // Mouth
-                break;
-            case 3:
-                // Frame 3: Normal face
-                pixels.push({ x: 10, y: 5, color: Colour.Black }); // Left eye
-                pixels.push({ x: 12, y: 5, color: Colour.Black }); // Right eye
-                pixels.push({ x: 11, y: 7, color: Colour.Black }); // Nose
-                pixels.push({ x: 10, y: 8, color: Colour.Black }); // Mouth
-                break;
+        
+        // Define object (rectangle) position based on frame number
+        const objectWidth = 5; // Width of the object (rectangle)
+        const objectX = frameNumber % (screenWidth - objectWidth); // Calculate object position based on frame number
+        
+        // Draw the object (rectangle) at the calculated position
+        for (let x = objectX; x < objectX + objectWidth; x++) {
+            for (let y = 5; y < 10; y++) { // Object height from y=5 to y=9
+                pixels.push({ x: x, y: y, color: Colour.White });
+            }
         }
-
-        return { frameNumber, pixels };
+        
+        return pixels;
     }
-
-    private generateAnimationFrames(): IFrame[] {
+        
+    private generateObjectAnimationFrames(): IFrame[] {
         const frames: IFrame[] = [];
-        const totalFramesNumber = 30; // Total frames for the animation
-
-        for (let i = 0; i < totalFramesNumber; i++) {
-            frames.push(this.generateCatFrame(i));
+        const totalFrames = 40; // Total frames for the animation
+        
+        for (let frameNumber = 0; frameNumber < totalFrames; frameNumber++) {
+            const frame: IFrame = {
+                frameNumber: frameNumber,
+                pixels: this.generateObjectFrame(frameNumber, 80), // Передача ширини екрану (наприклад, 80) в якості параметра
+            };
+            frames.push(frame);
         }
-
+        
         return frames;
     }
 }
