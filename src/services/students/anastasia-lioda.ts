@@ -95,8 +95,8 @@ export class AnastasiaLiodaConfigLoaderService implements IConfigLoaderService {
             frames.push(this.generateDiagonalFrame(i, centerX - swayOffset + branchLength, trunkLength, 'down', Colour.White));
 
             // Leaves (adjust starting X for swaying)
-            frames.push(this.generateLeavesFrame(i, centerX - swayOffset - branchLength + 1, trunkLength - 2, leafSize, Colour.Green));
-            frames.push(this.generateLeavesFrame(i, centerX - swayOffset + branchLength - 1, trunkLength - 2, leafSize, Colour.Green));
+            frames.push(this.generateLeavesFrame(i, centerX - swayOffset - branchLength + 1, trunkLength - 2, leafSize, Colour.White));
+            frames.push(this.generateLeavesFrame(i, centerX - swayOffset + branchLength - 1, trunkLength - 2, leafSize, Colour.White));
           
         }
         return frames;
