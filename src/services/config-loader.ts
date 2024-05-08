@@ -41,6 +41,8 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
+import { VictoriaYatsiukConfigLoaderService } from "./students/victoria-yatsiuk";
+import { MykhailoRyzhanovskyiConfigLoaderService } from "./students/mykhailo-ryzhanovskyi"
 import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
 import { DariiaHrychynaConfigLoaderService } from "./students/dariia.hrychyna";
 import {DmytroBilykConfigLoaderService} from "./students/dmytro-bilyk";
@@ -51,6 +53,9 @@ import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmy
 import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
 import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
 import { VolodymyrBorshoshConfigLoaderService } from "./students/volodymyr-borshosh";
+import { NazarKolodchakConfigLoaderService } from "./students/nazar-kolodchak"; 
+import { DmytroBoykoiConfigLoaderService } from "./students/dmytro-boyko";
+import { VitaliyZhuravskyiConfigLoaderService } from "./students/vitaliy-zhuravskyi";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -98,6 +103,8 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
+      new VictoriaYatsiukConfigLoaderService()
+      new MykhailoRyzhanovskyiConfigLoaderService(),
       new MykytaSirykConfigLoaderService(),
       new DariiaHrychynaConfigLoaderService(),
       new DmytroBilykConfigLoaderService(),
@@ -108,6 +115,9 @@ export class MainConfigLoaderService {
       new VolodymyrDemchyshynConfigLoaderService(),
       new MariiaKatsubaConfigLoaderService(),
       new VolodymyrBorshoshConfigLoaderService(),
+      new NazarKolodchakConfigLoaderService(),
+      new DmytroBoykoiConfigLoaderService(),
+      new VitaliyZhuravskyiConfigLoaderService(),
     ];
   }
 
@@ -132,6 +142,7 @@ export class MainConfigLoaderService {
       }
     }
 
+    
     return results;
   }
 }
