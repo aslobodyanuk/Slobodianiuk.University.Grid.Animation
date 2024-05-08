@@ -58,6 +58,7 @@ import { VolodymyrBorshoshConfigLoaderService } from "./students/volodymyr-borsh
 import { NazarKolodchakConfigLoaderService } from "./students/nazar-kolodchak";
 import { DmytroBoykoiConfigLoaderService } from "./students/dmytro-boyko";
 import { VitaliyZhuravskyiConfigLoaderService } from "./students/vitaliy-zhuravskyi";
+import { NikitaPyhtinConfigLoaderService } from "./students/nikita-pyhtin";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -122,6 +123,7 @@ export class MainConfigLoaderService {
       new NazarKolodchakConfigLoaderService(),
       new DmytroBoykoiConfigLoaderService(),
       new VitaliyZhuravskyiConfigLoaderService(),
+      new NikitaPyhtinConfigLoaderService(),
     ];
   }
 
