@@ -52,6 +52,7 @@ import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-c
 import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
 import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
 import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
+import { NazarKolodchakConfigLoaderService } from "./students/nazar-kolodchak"; 
 import { DmytroBoykoiConfigLoaderService } from "./students/dmytro-boyko";
 import { VitaliyZhuravskyiConfigLoaderService } from "./students/vitaliy-zhuravskyi";
 
@@ -112,6 +113,7 @@ export class MainConfigLoaderService {
       new AnastasiaDmytryshynConfigLoaderService(),
       new VolodymyrDemchyshynConfigLoaderService(),
       new MariiaKatsubaConfigLoaderService(),
+      new NazarKolodchakConfigLoaderService(),
       new DmytroBoykoiConfigLoaderService(),
       new VitaliyZhuravskyiConfigLoaderService(),
     ];
