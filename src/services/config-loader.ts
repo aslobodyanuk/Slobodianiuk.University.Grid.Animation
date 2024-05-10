@@ -41,6 +41,7 @@ import { DmytroSerafymConfigLoaderService } from "./students/dmytro_serafym";
 import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondratska";
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
+import { AnastasiaLiodaConfigLoaderService } from "./students/anastasia-lioda";
 import { VictoriaYatsiukConfigLoaderService } from "./students/victoria-yatsiuk";
 import { MykhailoRyzhanovskyiConfigLoaderService } from "./students/mykhailo-ryzhanovskyi"
 import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
@@ -110,6 +111,7 @@ export class MainConfigLoaderService {
       new VictoriaKondratskaConfigLoaderService(),
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
+      new AnastasiaLiodaConfigLoaderService(),
       new VictoriaYatsiukConfigLoaderService(),
       new MykhailoRyzhanovskyiConfigLoaderService(),
       new MykytaSirykConfigLoaderService(),
