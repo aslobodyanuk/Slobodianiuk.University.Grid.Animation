@@ -30,16 +30,14 @@ export class AnastasiiaProkopishenaConfigLoaderService implements IConfigLoaderS
 function GenerateSunFrame(frameNumber: number): IFrame {
     const pixels: IPixelState[] = [];
 
-    // Draw sun center
     const sunCenterX = 7;
     const sunCenterY = 7;
     const sunCenterRadius = 3;
     drawCircle(sunCenterX, sunCenterY, sunCenterRadius, pixels);
 
-    // Draw sun rays
     const sunRadius = 5;
-    const rayLength = 7; // Збільшити довжину променів
-    const raysCount = 8; // Змінити кількість променів
+    const rayLength = 7; 
+    const raysCount = 8; 
     const angleIncrement = (2 * Math.PI) / raysCount;
     const rotationAngle = (frameNumber % 120) * (Math.PI / 60);
     
