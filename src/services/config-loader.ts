@@ -1,6 +1,7 @@
 import IAnimationConfig from "../models/animation-config";
 import { IConfigLoaderService } from "./config-loader-interface";
 import { AndriiSlobodianiukConfigLoaderService } from "./students/andrii-slobodianiuk";
+import { MariiaBodnarConfigLoaderService } from "./students/mariia-bodnar";
 import { VitaliiSynytskyiConfigLoaderService } from "./students/vitalii-synytskyi";
 import { OleksandrZhukConfigLoaderService } from "./students/oleksandr-zhuk";
 import { YaroslavPasichnykConfigLoaderService } from "./students/yaroslav-pasichnyk";
@@ -41,6 +42,32 @@ import { VictoriaKondratskaConfigLoaderService } from "./students/victoria-kondr
 import { AndriiKozynyiConfigLoaderService } from "./students/andrii-kozynyi";
 import { MariiaHusakConfigLoaderService } from "./students/mariia-husak";
 import { OlehTysovskyiConfigLoaderService } from "./students/oleh-tysovskyi";
+import { AnastasiaLiodaConfigLoaderService } from "./students/anastasia-lioda";
+import { VictoriaYatsiukConfigLoaderService } from "./students/victoria-yatsiuk";
+import { MykhailoRyzhanovskyiConfigLoaderService } from "./students/mykhailo-ryzhanovskyi"
+import { MykytaSirykConfigLoaderService } from "./students/mykyta-siryk";
+import { DariiaHrychynaConfigLoaderService } from "./students/dariia.hrychyna";
+import {DmytroBilykConfigLoaderService} from "./students/dmytro-bilyk";
+import { NikitaPashchukConfigLoaderService } from "./students/nikita-pashchuk";
+import { KaterynaBaryliukConfigLoaderService } from "./students/kateryna-baryliuk";
+import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-chervynska";
+import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
+import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
+import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
+import { DenysNemyrkaConfigLoaderService } from "./students/denys-nemyrka";
+import { VladBarvinskiyConfigLoaderService } from "./students/vladuslav-barvinskui";
+import { AntonMikhalitsynConfigLoaderService } from "./students/anton-mikhalitsyn";
+import { OlehBezrodnyiConfigLoaderService } from "./students/oleh-bezrodnyi";
+import { OlehFiniakConfigLoaderService } from "./students/oleh-finiak";
+import { DanyloHrabarConfigLoaderService } from "./students/danylo-hrabar";
+import { VolodymyrBorshoshConfigLoaderService } from "./students/volodymyr-borshosh";
+import { NazarKolodchakConfigLoaderService } from "./students/nazar-kolodchak";
+import { DmytroBoykoiConfigLoaderService } from "./students/dmytro-boyko";
+import { VitaliyZhuravskyiConfigLoaderService } from "./students/vitaliy-zhuravskyi";
+import { YuriiBroslavskyiConfigLoaderService } from "./students/yurii-broslavskyi";
+import { DenysHryhoriichukConfigLoaderService } from "./students/denys-hryhoriichuk";
+import { GalaburdaLizaConfigLoaderService } from "./students/galaburda-liza";
+import { NikitaPyhtinConfigLoaderService } from "./students/nikita-pyhtin";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -48,6 +75,7 @@ export class MainConfigLoaderService {
   constructor() {
     this.services = [
       new AndriiSlobodianiukConfigLoaderService(),
+      new MariiaBodnarConfigLoaderService(),
       new OleksandrZhukConfigLoaderService(),
       new YaroslavPasichnykConfigLoaderService(),
       new YaroslavTsvykConfigLoaderService(),
@@ -88,6 +116,32 @@ export class MainConfigLoaderService {
       new AndriiKozynyiConfigLoaderService(),
       new MariiaHusakConfigLoaderService(),
       new OlehTysovskyiConfigLoaderService(),
+      new AnastasiaLiodaConfigLoaderService(),
+      new VictoriaYatsiukConfigLoaderService(),
+      new MykhailoRyzhanovskyiConfigLoaderService(),
+      new MykytaSirykConfigLoaderService(),
+      new DariiaHrychynaConfigLoaderService(),
+      new DmytroBilykConfigLoaderService(),
+      new NikitaPashchukConfigLoaderService(),
+      new KaterynaBaryliukConfigLoaderService(),
+      new YelyzavetaChervynskaConfigLoaderService(),
+      new AnastasiaDmytryshynConfigLoaderService(),
+      new VolodymyrDemchyshynConfigLoaderService(),
+      new MariiaKatsubaConfigLoaderService(),
+      new DenysNemyrkaConfigLoaderService(),
+      new VladBarvinskiyConfigLoaderService(),
+      new AntonMikhalitsynConfigLoaderService(),
+      new OlehBezrodnyiConfigLoaderService(),
+      new OlehFiniakConfigLoaderService(),
+      new DanyloHrabarConfigLoaderService(),
+      new VolodymyrBorshoshConfigLoaderService(),
+      new NazarKolodchakConfigLoaderService(),
+      new DmytroBoykoiConfigLoaderService(),
+      new VitaliyZhuravskyiConfigLoaderService(),
+      new YuriiBroslavskyiConfigLoaderService(),
+      new DenysHryhoriichukConfigLoaderService(),
+      new GalaburdaLizaConfigLoaderService(),
+      new NikitaPyhtinConfigLoaderService(),
     ];
   }
 
