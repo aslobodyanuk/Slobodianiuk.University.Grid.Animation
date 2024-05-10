@@ -112,7 +112,7 @@ export class MainConfigLoaderService {
       }
     }
 
-    
+
     return results;
   }
 }
