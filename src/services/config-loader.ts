@@ -143,7 +143,7 @@ export class MainConfigLoaderService {
       new DenysHryhoriichukConfigLoaderService(),
       new GalaburdaLizaConfigLoaderService(),
       new NikitaPyhtinConfigLoaderService(),
-      new RostykDurjaginConfigLoaderService()
+      new RostykDurjaginConfigLoaderService(),
     ];
   }
 
