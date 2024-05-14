@@ -54,9 +54,6 @@ import { YelyzavetaChervynskaConfigLoaderService } from "./students/yelyzaveta-c
 import { AnastasiaDmytryshynConfigLoaderService } from "./students/anastasia-dmytryshyn";
 import { VolodymyrDemchyshynConfigLoaderService } from "./students/volodymyr-demchyshyn";
 import { MariiaKatsubaConfigLoaderService } from "./students/mariia-katsuba";
-<<<<<<< HEAD
-import { RostykDurjaginConfigLoaderService } from "./students/rostyk-durjagin";
-=======
 import { DenysNemyrkaConfigLoaderService } from "./students/denys-nemyrka";
 import { VladBarvinskiyConfigLoaderService } from "./students/vladuslav-barvinskui";
 import { AntonMikhalitsynConfigLoaderService } from "./students/anton-mikhalitsyn";
@@ -71,7 +68,7 @@ import { YuriiBroslavskyiConfigLoaderService } from "./students/yurii-broslavsky
 import { DenysHryhoriichukConfigLoaderService } from "./students/denys-hryhoriichuk";
 import { GalaburdaLizaConfigLoaderService } from "./students/galaburda-liza";
 import { NikitaPyhtinConfigLoaderService } from "./students/nikita-pyhtin";
->>>>>>> upstream/main
+import { RostykDurjaginConfigLoaderService } from "./students/rostyk-durjagin";
 
 export class MainConfigLoaderService {
   private services: IConfigLoaderService[];
@@ -132,9 +129,6 @@ export class MainConfigLoaderService {
       new AnastasiaDmytryshynConfigLoaderService(),
       new VolodymyrDemchyshynConfigLoaderService(),
       new MariiaKatsubaConfigLoaderService(),
-<<<<<<< HEAD
-      new RostykDurjaginConfigLoaderService(),
-=======
       new DenysNemyrkaConfigLoaderService(),
       new VladBarvinskiyConfigLoaderService(),
       new AntonMikhalitsynConfigLoaderService(),
@@ -149,7 +143,7 @@ export class MainConfigLoaderService {
       new DenysHryhoriichukConfigLoaderService(),
       new GalaburdaLizaConfigLoaderService(),
       new NikitaPyhtinConfigLoaderService(),
->>>>>>> upstream/main
+      new RostykDurjaginConfigLoaderService()
     ];
   }
 
