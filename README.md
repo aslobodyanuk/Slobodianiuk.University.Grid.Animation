@@ -17,7 +17,6 @@ At this point you sould have the project running and you could see it by visitin
 
 In my case this was: `http://127.0.0.1:5173/`
 
-
 Yours could differ.
 
 ### Grid

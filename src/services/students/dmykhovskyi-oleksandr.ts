@@ -7,7 +7,7 @@ import IFrame from '../../models/frame';
 
 export class DmykhovskyiOleksandrConfigLoaderService implements IConfigLoaderService {
   private studentName: string = 'Oleksandr Dmykhovskyi';
-  private studentEmail: string = 'ashadmykhovski@gmail.com';
+  private studentEmail: string = 'sashadmykhovski@gmail.com';
 
   public getStudentName(): string {
     return this.studentName;
